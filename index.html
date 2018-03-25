@@ -1,0 +1,200 @@
+<html>
+
+<head>
+    <title> Name </title>
+    <link rel="stylesheet" type="text/css" href="semantic.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous">
+    </script>
+    <meta name="viewport" content="width=device-width" />
+    <script src="semantic.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style type="text/css">
+      .wrap {width: 100%;background-color: #e5dede;}
+
+      .floatleft 
+      {
+        float:left; 
+        width: 20%;
+        background-color: red;
+        min-height: 100%;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+      }
+
+      .floatright 
+      {
+        float: right;
+        background-color: green;
+        width: 79%;
+        min-height: 100%;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+      }
+      
+      .toggle 
+      {
+        display: none;
+        position: absolute;
+        top: 0;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 15px 15px 10px;
+        right: 0px;
+      }
+      
+      .toggle .bar1,  .toggle .bar2, .toggle .bar3 
+      {
+        width: 25px;
+        height: 2px;
+        background: #FFF;
+        margin-bottom: 8px;
+      }
+      
+      .mobile_bar
+      {
+        display: none;
+        width: 100%;
+        height: 55px;
+        background-color: blue;
+      }
+      .mobile_bar h1
+      {text-align: center; padding: 2%;}
+     
+      @media (max-width: 768px) {
+      
+      body {  min-width: 320px;}
+  .mobile_bar
+  {
+    display: block;
+  }
+  .toggle {
+    display: block;
+  }
+  .floatleft
+  {
+    display: none;
+  }
+  .floatright
+  {
+    width: 100%;
+  }
+  .new_check
+  {
+    width:85%;
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 55px;
+  }
+}
+  .main_content
+  {
+    padding-top: 4%;
+  }
+  .heading
+  {
+    padding-left: 15%;
+    padding-right: 15%;
+    border-radius: 20px;
+  }
+  .heading h1
+  {
+    text-align: center;
+    padding: 1%;
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    
+  }
+    </style>
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+      $('.toggle').click(function(){$('.floatleft').toggleClass('new_check');});
+      $("#second_page").css({display: "none"});
+      $("#third_page").css({display: "none"});
+
+      $('#go_first_page').click(function(){
+                                            $("#first_page").css({display: "block"});
+                                            $("#second_page").css({display: "none"});
+                                            $("#third_page").css({display: "none"});
+                                            $('.floatleft').toggleClass('new_check');
+                                      });
+
+      $('#go_second_page').click(function(){
+                                            $("#first_page").css({display: "none"});
+                                            $("#second_page").css({display: "block"});
+                                            $("#third_page").css({display: "none"});
+                                            $('.floatleft').toggleClass('new_check');
+                                      });
+
+      $('#go_third_page').click(function(){
+                                            $("#first_page").css({display: "none"});
+                                            $("#second_page").css({display: "none"});
+                                            $("#third_page").css({display: "block"});
+                                            $('.floatleft').toggleClass('new_check');
+                                      });
+
+
+    });
+
+
+    </script>
+    </head>
+
+<body> 
+  <div class="wrap">
+
+    <div class="mobile_bar">
+      <h1>Name Surname</h1>
+      <li class="toggle">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </li>
+    </div>
+
+    <div class="floatleft" id="left_side_nav_bar">
+      <ul>
+        <li><a href="#first_page"   id="go_first_page">FIRST PAGE</a></li>
+        <li><a href="#second_page"  id="go_second_page">SECOND PAGE</a></li>
+        <li><a href="#third_page"   id="go_third_page">THIRD PAGE</a></li>
+      </ul>
+    </div>
+
+    <section id="first_page">
+      <div class="floatright" id="right_side_nav_bar">
+        <div class="main_content">
+          <div class="heading">
+            <h1>FIRST PAGE</h1>
+          </div>
+        </div>      
+      </div>
+    </section>
+     
+    <section id="second_page">
+      <div class="floatright" id="right_side_nav_bar">
+        <div class="main_content">
+          <div class="heading">
+            <h1>SECOND PAGE</h1>
+          </div>
+        </div>      
+      </div>
+    </section>
+
+    
+    <section id="third_page">
+      <div class="floatright" id="right_side_nav_bar">
+        <div class="main_content">
+          <div class="heading">
+            <h1>THIRD PAGE</h1>
+          </div>
+        </div>      
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>
